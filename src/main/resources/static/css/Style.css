@@ -1,0 +1,52 @@
+.body{
+    background-color: white;
+    margin:auto;
+}
+
+.wrapper{
+    margin:auto;
+}
+
+H1{
+    margin:auto;
+    color:cadetblue;
+    text-align: center;
+}
+
+.formBox{
+    display:block;
+    height:50px;
+    background-color: white;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.author{
+    front-size:30px;
+    color:black;
+    padding:5px 0 0 5px;
+}
+
+.created_at{
+    padding-left:5px;
+    front-size:12px;
+    color:black;
+}
+
+.messages{
+    padding-left:5px;
+    front-size:20px;
+    color:black;
+}
+
+
+
+.msgBox{
+    display:block;
+    height:100px;
+    border-radius: 5%;
+    background-color: white;
+    width:100%;
+}
+
+
