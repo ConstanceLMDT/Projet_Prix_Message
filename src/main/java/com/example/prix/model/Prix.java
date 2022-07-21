@@ -12,6 +12,8 @@ public class Prix {
     private int id;
 
     private double prix;
+
+    @Column(name= "description")
     private String description;
 
     @Column(name= "created_at")
@@ -24,7 +26,6 @@ public class Prix {
     }
 
     public Prix(){
-
     }
 
     public double getPrix() {

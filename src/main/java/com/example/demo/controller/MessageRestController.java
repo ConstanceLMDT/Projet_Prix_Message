@@ -14,10 +14,8 @@ import java.util.List;
 @RestController
 public class MessageRestController {
 
-
     @Autowired
     MessageDAO messageDAO;
-
 
     @GetMapping("/api/msg")
     public List<Message> messageList(){
@@ -28,7 +26,7 @@ public class MessageRestController {
     public ResponseEntity<Void> saveMessage(@RequestBody Message message){
         message.setCreatedAt(LocalDateTime.now());
         messageDAO.save(message);
-        return new ResponseEntity("Message created.", HttpStatus.CREATED);
+        return new ResponseEntity("Message created", HttpStatus.CREATED);
     }
 
     @DeleteMapping("/api/msg/{id}")

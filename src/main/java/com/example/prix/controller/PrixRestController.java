@@ -10,10 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@CrossOrigin("*")
 @RestController
 public class PrixRestController {
-
 
     @Autowired
     PrixDAO prixDAO;
@@ -27,7 +25,7 @@ public class PrixRestController {
     public ResponseEntity<Void> savePrix(@RequestBody Prix prix){
         prix.setCreatedAt(LocalDateTime.now());
         prixDAO.save(prix);
-        return new ResponseEntity("Prix created.", HttpStatus.CREATED);
+        return new ResponseEntity("Prix created", HttpStatus.CREATED);
     }
 
     @DeleteMapping("/api/prix/{id}")
@@ -37,7 +35,7 @@ public class PrixRestController {
     }
 
     @PutMapping("/api/prix/{id}")
-        public ResponseEntity<Double> updatePrix(@PathVariable(value="id") Long id, @RequestBody Prix prix){
+        public ResponseEntity<String> updatePrix(@PathVariable(value="id") Long id, @RequestBody Prix prix){
         var prixEntity= prixDAO.getReferenceById(id);
         prixEntity.setPrix(prix.getPrix());
         prixDAO.save(prix);

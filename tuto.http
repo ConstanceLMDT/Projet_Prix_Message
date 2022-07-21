@@ -1,7 +1,8 @@
-POST http://localhost:8080//api/prix/msg
+POST http://localhost:8080/api/msg
 
 {
  "author":"ab,
  "messages":"cd
 }
+
 
