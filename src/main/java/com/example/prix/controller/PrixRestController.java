@@ -22,23 +22,25 @@ public class PrixRestController {
     }
 
     @PostMapping("/api/prix")
-    public ResponseEntity<Void> savePrix(@RequestBody Prix prix){
+    public ResponseEntity<Void> savePrice(@RequestBody Prix prix){
         prix.setCreatedAt(LocalDateTime.now());
         prixDAO.save(prix);
-        return new ResponseEntity("Prix created", HttpStatus.CREATED);
+        return new ResponseEntity("Price created", HttpStatus.CREATED);
     }
 
     @DeleteMapping("/api/prix/{id}")
-    public ResponseEntity<Long> deleteId(@PathVariable(value="id") Long id){
+    public ResponseEntity<Long> deletePrice(@PathVariable(value="id") Long id){
         prixDAO.deleteById(id);
         return ResponseEntity.ok(id);
     }
 
+
     @PutMapping("/api/prix/{id}")
         public ResponseEntity<String> updatePrix(@PathVariable(value="id") Long id, @RequestBody Prix prix){
         var prixEntity= prixDAO.getReferenceById(id);
+        prixEntity.setDescription(prix.getDescription());
         prixEntity.setPrix(prix.getPrix());
         prixDAO.save(prix);
-        return new ResponseEntity("Prix update.", HttpStatus.ACCEPTED);
+        return new ResponseEntity("Description update.", HttpStatus.ACCEPTED);
     }
 }
